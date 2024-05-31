@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {assets} from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext';
 
@@ -7,7 +7,16 @@ const Navbar = ({setShowLogin}) => {
 
     const [menu , setMenu] =useState("Home"); 
 
-    const {getTotalCartAmount} = useContext(StoreContext)
+    const {getTotalCartAmount,token,setToken} = useContext(StoreContext)
+
+    const navigate = useNavigate();
+
+    const logout =()=>{
+          localStorage.removeItem("token");
+          setToken("");
+          navigate("/")
+
+    }
 
   return (
     <div className='py-5 justify-between flex items-center '>
@@ -28,8 +37,16 @@ const Navbar = ({setShowLogin}) => {
                </div>
                
             </div>
-            <button className='font-outfit text-[#49557e] bg-transparent text-base border border-orange-500 py-2 px-7 rounded-full cursor-pointer hover:bg-orange-300 duration-300 custom:px-6 custom:py-2 custom2:px-[20px] custom2:py-[7px] custom2:text-[15px]' onClick={()=>setShowLogin(true)}>Sign in</button>
-
+            {!token?<button className='font-outfit text-[#49557e] bg-transparent text-base border border-orange-500 py-2 px-7 rounded-full cursor-pointer hover:bg-orange-300 duration-300 custom:px-6 custom:py-2 custom2:px-[20px] custom2:py-[7px] custom2:text-[15px]' onClick={()=>setShowLogin(true)}>Sign in</button>
+              :<div className='group relative cursor-pointer'>
+                  <img src={assets.profile_icon} alt="" />
+                  <ul className="absolute hidden right-0 z-[1] group-hover:flex group-hover:flex-col group-hover:gap-[10px] group-hover:font-outfit group-hover:list-none group-hover:py-3 group-hover:px-6 group-hover:rounded group-hover:border group-hover:border-orange-500 group-hover:outline group-hover:outline-1 group-hover:bg-[#e9e9e9] group-hover:outline-white">
+                    <li className='flex items-center cursor-pointer -ml-3 w-3/5 hover:text-orange-400'><img src={assets.bag_icon} alt="" /><p className='text-sm'>Orders</p></li>
+                    <hr />
+                    <li onClick={logout} className='flex items-center  cursor-pointer -ml-3 w-3/5 hover:text-orange-400'><img src={assets.logout_icon} alt="" /><p className='text-sm'>Logout</p></li>
+                  </ul>
+              </div>
+                }
         </div>
     </div>
   )
