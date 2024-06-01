@@ -25,10 +25,15 @@ export default {
             transform: 'scale(1)',
           },
         },
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         fadein: 'fadein 3s ease-in-out',
         'pop-up': 'pop-up  ease-in-out',
+        'rotate': 'rotate 1s infinite',
       },
       screens: {
         'custom': {'max': '1050px'},

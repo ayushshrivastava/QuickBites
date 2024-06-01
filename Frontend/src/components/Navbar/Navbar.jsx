@@ -41,7 +41,7 @@ const Navbar = ({setShowLogin}) => {
               :<div className='group relative cursor-pointer'>
                   <img src={assets.profile_icon} alt="" />
                   <ul className="absolute hidden right-0 z-[1] group-hover:flex group-hover:flex-col group-hover:gap-[10px] group-hover:font-outfit group-hover:list-none group-hover:py-3 group-hover:px-6 group-hover:rounded group-hover:border group-hover:border-orange-500 group-hover:outline group-hover:outline-1 group-hover:bg-[#e9e9e9] group-hover:outline-white">
-                    <li className='flex items-center cursor-pointer -ml-3 w-3/5 hover:text-orange-400'><img src={assets.bag_icon} alt="" /><p className='text-sm'>Orders</p></li>
+                    <li onClick={()=>navigate('/myorders')} className='flex items-center cursor-pointer -ml-3 w-3/5 hover:text-orange-400'><img src={assets.bag_icon} alt="" /><p className='text-sm'>Orders</p></li>
                     <hr />
                     <li onClick={logout} className='flex items-center  cursor-pointer -ml-3 w-3/5 hover:text-orange-400'><img src={assets.logout_icon} alt="" /><p className='text-sm'>Logout</p></li>
                   </ul>
