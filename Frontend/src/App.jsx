@@ -12,9 +12,11 @@ import { useTheme } from './context/ThemeContext'
 import ThemeSwitcher from './components/ThemeSwitcher/ThemeSwitcher'
 
 
+
 const App = () => {
   const [showLogin,setShowLogin] =useState(false)
   const {theme} = useTheme();
+
 
 
 
@@ -25,6 +27,7 @@ const App = () => {
       <div className='w-4/5 mx-auto ' >
         <Navbar setShowLogin={setShowLogin}/>
         <ThemeSwitcher/>
+      
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/cart' element={<Cart/>} />

@@ -8,13 +8,20 @@ import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 
 
+
 //app config 
 const app = express()
 const port = 5000
 
 //middleware 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin :["https://quickbites.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+))
 
 //db connection 
 connectDB();
@@ -25,6 +32,7 @@ app.use("/images",express.static('uploads'))
 app.use("/api/user",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
+
 
 //request the data from the server 
 app.get("/",(req,res)=>{

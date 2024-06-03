@@ -13,12 +13,12 @@ const App = () => {
   const url = "http://localhost:5000"
 
   return (
-   <div>
+     <div>   
     <ToastContainer/>
     <Navbar/>
     <hr/>
     <div className='flex'>
-      <Sidebar/>
+      <Sidebar/>  
       <Routes>
         <Route path="/add" element={<Add url={url}/>}/>
         <Route path="/list" element={<List url={url}/>}/>
