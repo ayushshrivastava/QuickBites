@@ -15,13 +15,7 @@ const port = 5000
 
 //middleware 
 app.use(express.json())
-app.use(cors(
-    {
-        origin :["https://quickbites.vercel.app"],
-        methods:["POST","GET"],
-        credentials:true
-    }
-))
+app.use(cors())
 
 //db connection 
 connectDB();
