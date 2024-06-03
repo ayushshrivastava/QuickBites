@@ -17,6 +17,8 @@ const Navbar = ({setShowLogin}) => {
           navigate("/")
 
     }
+    
+
 
   return (
     <div className='py-5 justify-between flex items-center '>
@@ -28,7 +30,7 @@ const Navbar = ({setShowLogin}) => {
             <a href='#footer' onClick={()=>setMenu("Contact-Us")} className={menu==="Contact-Us" ?"active pb-0.5 border-b-2 border-b-[#49557e]":""}>Contact Us</a>
         </ul>
         <div className='flex gap-10 items-center custom:gap-8 custom2:gap-[20px] '>
-            <img src={assets.search_icon} alt="" className='custom:w-6 custom2:w-[20px]'/>
+           
             <div className='relative'>
                <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link> 
             
