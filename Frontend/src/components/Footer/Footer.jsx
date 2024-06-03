@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
+import {Link, useNavigate} from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[20px] p-[20px] px-[8vw] pt-[80px] mt-[100px]' id='footer'>
@@ -16,7 +17,7 @@ const Footer = () => {
             <div className="flex flex-col items-start gap-[20px]">
                 <h2 className='text-2xl font-bold text-white'>COMPANY</h2>
                 <ul>
-                  <li className='mb-[10px] list-disc cursor-pointer'>Home</li>
+                  <Link to='/' onClick={()=>setMenu("Home")} ><li className='mb-[10px] list-disc cursor-pointer'>Home</li></Link>
                   <li className='mb-[10px] list-disc cursor-pointer'>About Us</li>
                   <li className='mb-[10px] list-disc cursor-pointer'>Delivery</li>
                   <li className='mb-[10px] list-disc cursor-pointer'>Privacy Policy</li>

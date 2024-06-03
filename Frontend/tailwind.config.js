@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode:"class",
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -41,6 +41,7 @@ export default {
         'custom2':{'max':'900px'},
         'custom3':{'max':'750px'},
       },
+      
     },
   },
   plugins: [],
